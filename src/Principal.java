@@ -5,7 +5,6 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 
@@ -32,6 +31,9 @@ public class Principal extends JFrame implements ActionListener {
 	BufferedReader ler;
 	InputStream in;
 	Fazer fazer = new Fazer();
+	
+	FileReader arquivo;
+	BufferedReader lerArquivo;
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -110,20 +112,26 @@ public class Principal extends JFrame implements ActionListener {
 		}
 		try {
 			int i = 0;
-			in = getClass().getResourceAsStream("/pp.txt");
-			ler = new BufferedReader(new InputStreamReader(in));
+			/*//in = getClass().getResourceAsStream("../notas-imd/pp.txt");
+			ler = new BufferedReader(new InputStreamReader(in));*/
+			String path = System.getProperty("user.home");
+			FileReader arquivo = new FileReader(path+"/pp.txt");
+			BufferedReader lerArquivo =new BufferedReader(arquivo);
 			String linha;
-			while ((linha = ler.readLine()) != null) {
+			while ((linha = lerArquivo.readLine()) != null) {
 				pp[i].setText(linha);
 				i++;
 			}
+			lerArquivo.close();
+			arquivo.close();
 		} catch (FileNotFoundException e1) {
 			e1.printStackTrace();
 		}
-		ler.close();
+		
+		/*ler.close();
 		in.close();
 		in = null;
-		ler = null;
+		ler = null;*/
 		// -------------------------PVT--------JTextField----------------------------------------
 		pvt = new JTextField[19];
 		cont = 0;
@@ -140,20 +148,25 @@ public class Principal extends JFrame implements ActionListener {
 		}
 		try {
 			int i = 0;
-			in = getClass().getResourceAsStream("/pvt.txt");
-			ler = new BufferedReader(new InputStreamReader(in));
+			/*in = getClass().getResourceAsStream("/pvt.txt");
+			ler = new BufferedReader(new InputStreamReader(in));*/
+			String path = System.getProperty("user.home");
+			FileReader arquivo = new FileReader(path+"/pvt.txt");
+			BufferedReader lerArquivo =new BufferedReader(arquivo);
 			String linha;
-			while ((linha = ler.readLine()) != null) {
+			while ((linha = lerArquivo.readLine()) != null) {
 				pvt[i].setText(linha);
 				i++;
 			}
+			lerArquivo.close();
+			arquivo.close();
 		} catch (FileNotFoundException e1) {
 			e1.printStackTrace();
 		}
-		ler.close();
+		/*ler.close();
 		in.close();
 		in = null;
-		ler = null;
+		ler = null;*/
 		// -------------------------ptss-------------JTextField-------------------------------------
 		pts = new JTextField[19];
 		cont = 0;
@@ -171,23 +184,25 @@ public class Principal extends JFrame implements ActionListener {
 		ler = null;
 		try {
 			int i = 0;
-			in = getClass().getResourceAsStream("/pts.txt");
-			ler = new BufferedReader(new InputStreamReader(in));
+			/*in = getClass().getResourceAsStream("/pts.txt");
+			ler = new BufferedReader(new InputStreamReader(in));*/
+			String path = System.getProperty("user.home");
+			FileReader arquivo = new FileReader(path+"/pts.txt");
+			BufferedReader lerArquivo =new BufferedReader(arquivo);
 			String linha;
-
-			while ((linha = ler.readLine()) != null) {
+			while ((linha = lerArquivo.readLine()) != null) {
 				pts[i].setText(linha);
-				double r = Double.parseDouble(linha);
-				fazer.mudaCor(r, pts[i]);
 				i++;
 			}
+			lerArquivo.close();
+			arquivo.close();
 		} catch (FileNotFoundException e1) {
 			e1.printStackTrace();
 		}
-		ler.close();
+		/*ler.close();
 		in.close();
 		in = null;
-		ler = null;
+		ler = null;*/
 		// -------------------------JLABEL--DAS--SEMANAS-------------------------------------------
 		semanas = new JLabel[19];
 		cont = 0;
@@ -243,19 +258,22 @@ public class Principal extends JFrame implements ActionListener {
 		}
 		try {
 			int i = 0;
-			InputStream in = getClass().getResourceAsStream("/ae.txt");
-			ler = new BufferedReader(new InputStreamReader(in));
+			/*InputStream in = getClass().getResourceAsStream("/ae.txt");
+			ler = new BufferedReader(new InputStreamReader(in));*/
+			String path = System.getProperty("user.home");
+			FileReader arquivo = new FileReader(path+"/ae.txt");
+			BufferedReader lerArquivo =new BufferedReader(arquivo);
 			String linha;
-			while ((linha = ler.readLine()) != null) {
+			while ((linha = lerArquivo.readLine()) != null) {
 				ae[i].setText(linha);
 				i++;
 			}
 		} catch (FileNotFoundException e1) {
 			e1.printStackTrace();
 		}
-		ler.close();
+		/*ler.close();
 		// abrir.close();
-		// -------------------------PT---------JTextField-----------------------------------------
+*/		// -------------------------PT---------JTextField-----------------------------------------
 		pt = new JTextField[5];
 		cont = 0;
 		this.setLayout(null);
@@ -271,10 +289,13 @@ public class Principal extends JFrame implements ActionListener {
 		}
 		try {
 			int i = 0;
-			InputStream in = getClass().getResourceAsStream("/pt.txt");
-			ler = new BufferedReader(new InputStreamReader(in));
+			/*InputStream in = getClass().getResourceAsStream("/pt.txt");
+			ler = new BufferedReader(new InputStreamReader(in));*/
+			String path = System.getProperty("user.home");
+			FileReader arquivo = new FileReader(path+"/pt.txt");
+			BufferedReader lerArquivo =new BufferedReader(arquivo);
 			String linha;
-			while ((linha = ler.readLine()) != null) {
+			while ((linha = lerArquivo.readLine()) != null) {
 				pt[i].setText(linha);
 				double r = Double.parseDouble(linha.replace(",", "."));
 				fazer.mudaCor(r, pt[i]);
@@ -283,9 +304,9 @@ public class Principal extends JFrame implements ActionListener {
 		} catch (FileNotFoundException e1) {
 			e1.printStackTrace();
 		}
-		ler.close();
+		/*ler.close();
 		// abrir.close();
-		// -------------------------PE---------JTextField------------------------------------------
+*/		// -------------------------PE---------JTextField------------------------------------------
 		pe = new JTextField[5];
 		cont = 0;
 		this.setLayout(null);
@@ -299,19 +320,22 @@ public class Principal extends JFrame implements ActionListener {
 		}
 		try {
 			int i = 0;
-			InputStream in = getClass().getResourceAsStream("/pe.txt");
-			ler = new BufferedReader(new InputStreamReader(in));
+			/*InputStream in = getClass().getResourceAsStream("/pe.txt");
+			ler = new BufferedReader(new InputStreamReader(in));*/
+			String path = System.getProperty("user.home");
+			FileReader arquivo = new FileReader(path+"/pe.txt");
+			BufferedReader lerArquivo =new BufferedReader(arquivo);
 			String linha;
-			while ((linha = ler.readLine()) != null) {
+			while ((linha = lerArquivo.readLine()) != null) {
 				pe[i].setText(linha);
 				i++;
 			}
 		} catch (FileNotFoundException e1) {
 			e1.printStackTrace();
 		}
-		ler.close();
+		/*ler.close();
 		// abrir.close();
-		// -------------------------Final das
+*/		// -------------------------Final das
 		// Disciplina---------JTextField------------------------------
 		finalDisciplina = new JTextField[5];
 		cont = 0;

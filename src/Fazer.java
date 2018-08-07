@@ -1,5 +1,3 @@
-
-
 import java.awt.*;
 import java.awt.event.*;
 import java.io.BufferedWriter;
@@ -25,25 +23,34 @@ public class Fazer {
 			v.setBackground(new Color(255, 77, 77));
 		}
 	}
+	/*public void ocultaArquivo(String dir) {
+        try {
+            if (System.getProperty("os.name").equals("Windows 2000")) {
+
+            }
+            Runtime.getRuntime().exec("attrib +H " + dir);
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }*/
 	
 	public void salvarpts(JTextField[] campos) throws IOException{
-		String path = System.getProperty("user.dir");
-		FileWriter cria = new FileWriter(path+"/src/pts.txt");
+		String path = System.getProperty("user.home");
+		FileWriter cria = new FileWriter(path+"/pts.txt");
 		BufferedWriter gravarArq = new BufferedWriter(cria);
 		for( int i=0; i < campos.length; i++){
 			String valor = campos[i].getText();
 			gravarArq.write(valor);
 			gravarArq.newLine();
 		} 
+		//ocultaArquivo("pts.txt");
 		gravarArq.close();
 		cria.close();
 	}
 	
 	public void salvarpp(JTextField[] campos) throws IOException{
-		//System.out.println("entrou");
-		//System.out.println("Usando propriedade user.dir: " + path);
-		String path = System.getProperty("user.dir");
-		FileWriter cria = new FileWriter(path+"/src/pp.txt");
+		String path = System.getProperty("user.home");
+		FileWriter cria = new FileWriter(path+"/pp.txt");
 		BufferedWriter gravarArq = new BufferedWriter(cria);
 		for( int i=0; i < campos.length; i++){
 			String valor = campos[i].getText();
@@ -51,57 +58,62 @@ public class Fazer {
 			gravarArq.newLine();
 //			System.out.println("salvou");
 		} 
+		//ocultaArquivo("pp.txt");
 		gravarArq.close();
 		cria.close();
 	}
 	
 	public void salvarae(JTextField[] campos) throws IOException{
-		String path = System.getProperty("user.dir");
-		FileWriter cria = new FileWriter(path+"/src/ae.txt");
+		String path = System.getProperty("user.home");
+		FileWriter cria = new FileWriter(path+"/ae.txt");
 		BufferedWriter gravarArq = new BufferedWriter(cria);
 		for( int i=0; i < campos.length; i++){
 			String valor = campos[i].getText();
 			gravarArq.write(valor);
 			gravarArq.newLine();
 		} 
+		//ocultaArquivo("ae.txt");
 		gravarArq.close();
 		cria.close();
 	}
 	public void salvarpe(JTextField[] campos) throws IOException{
-		String path = System.getProperty("user.dir");
-		FileWriter cria = new FileWriter(path+"/src/pe.txt");
+		String path = System.getProperty("user.home");
+		FileWriter cria = new FileWriter(path+"/pe.txt");
 		BufferedWriter gravarArq = new BufferedWriter(cria);
 		for( int i=0; i < campos.length; i++){
 			String valor = campos[i].getText();
 			gravarArq.write(valor);
 			gravarArq.newLine();
 		} 
+		//ocultaArquivo("pe.txt");
 		gravarArq.close();
 		cria.close();
 	}
 	
 	public void salvarpvt(JTextField[] campos) throws IOException{
-		String path = System.getProperty("user.dir");
-		FileWriter cria = new FileWriter(path+"/src/pvt.txt");
+		String path = System.getProperty("user.home");
+		FileWriter cria = new FileWriter(path+"/pvt.txt");
 		BufferedWriter gravarArq = new BufferedWriter(cria);
 		for( int i=0; i < campos.length; i++){
 			String valor = campos[i].getText();
 			gravarArq.write(valor);
 			gravarArq.newLine();
 		} 
+		//ocultaArquivo("pvt.txt");
 		gravarArq.close();
 		cria.close();
 	}
 	
 	public void salvarpt(JTextField[] campos) throws IOException{
-		String path = System.getProperty("user.dir");
-		FileWriter cria = new FileWriter(path+"/src/pt.txt");
+		String path = System.getProperty("user.home");
+		FileWriter cria = new FileWriter(path+"/pt.txt");
 		BufferedWriter gravarArq = new BufferedWriter(cria);
 		for( int i=0; i < campos.length; i++){
 			String valor = campos[i].getText();
 			gravarArq.write(valor);
 			gravarArq.newLine();
 		} 
+		//ocultaArquivo("pt.txt");
 		gravarArq.close();
 		cria.close();
 	}
