@@ -31,3 +31,5 @@ Java
 ## Telas
 
 ### Tela Inicial
+
+![imd-tela_inicial](https://user-images.githubusercontent.com/35462940/48484994-6bb81f80-e7f6-11e8-8af6-1cdbecac5949.png)
