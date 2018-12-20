@@ -28,8 +28,6 @@ Java
 * Meu Professor DENILSON OLIVEIRA do módulo básico do curso técnico do UFRN/IMD 
 * Meu Professor do IFRN HADLEY MAGNO 
 
-## Telas
-
-### Tela Inicial
+## Tela Principal
 
 ![imd-tela_inicial](https://user-images.githubusercontent.com/35462940/48484994-6bb81f80-e7f6-11e8-8af6-1cdbecac5949.png)
